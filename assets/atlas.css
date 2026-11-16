@@ -55,6 +55,8 @@ html { scrollbar-color: var(--ink-3) var(--paper-2); }
 .nav a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 1px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease); }
 .nav a:hover, .nav a[aria-current='page'] { color: var(--ink); }
 .nav a:hover::after, .nav a[aria-current='page']::after { transform: scaleX(1); }
+.nav .nav-dash { display: none; }
+.header-actions { display: flex; gap: 12px; align-items: center; }
 .menu-btn { display: none; width: 44px; height: 44px; border: 1px solid var(--ink); background: transparent; cursor: pointer; place-items: center; border-radius: 50%; }
 .menu-btn svg { width: 20px; height: 20px; }
 
@@ -242,6 +244,10 @@ html { scrollbar-color: var(--ink-3) var(--paper-2); }
   .limits { grid-template-columns: 1fr; }
   .faq-group > h2 { position: static; }
   .contact-card { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .header-actions .btn-red { display: none; }
+  .nav .nav-dash { display: block; color: var(--red); font-weight: 700; }
 }
 @media (max-width: 520px) {
   .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
