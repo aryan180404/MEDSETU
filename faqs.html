@@ -1,193 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEDSETU - FAQ</title>
-    <style>
-        @font-face {
-            font-family: 'Artifakt Element';
-            src: url('ArtifaktElement-Regular.woff2') format('woff2'),
-                 url('ArtifaktElement-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        body {
-            font-family: 'Artifakt Element', sans-serif;
-            background-color: #fff;
-            color: #000;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            font-size: 14px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            font-size: 18px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #000;
-            cursor: pointer;
-        }
-        .medsetu {
-            font-size: 25px;
-            font-weight: bold;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            flex-grow: 1;
-            padding: 0 10%;
-            text-align: center;
-        }
-        .search-bar-container {
-            margin-top: 40px; /* Space between title and search bar */
-            width: 100%;
-            max-width: 600px;
-        }
-        .search-bar-container input {
-            width: 100%;
-            padding: 10px;
-            font-size: 18px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .faq-section {
-            margin-top: 60px; /* Increased distance from the search bar */
-            text-align: left;
-            width: 100%;
-            max-width: 800px;
-        }
-        .faq-item {
-            background-color: #007BFF;
-            color: white;
-            border: 1px solid #007BFF;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: background-color 0.3s ease;
-        }
-        .faq-item:hover {
-            background-color: #0056b3;
-        }
-        .faq-item h3 {
-            margin-top: 0;
-        }
-        .image-container {
-            width: 100%;
-            height: auto;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-top: 60px; /* Increased distance from the FAQ items */
-        }
-        .trust-bar {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
-    <script>
-        function filterFAQs() {
-            const searchInput = document.getElementById('faq-search').value.toLowerCase();
-            const faqItems = document.getElementsByClassName('faq-item');
-            for (let i = 0; i < faqItems.length; i++) {
-                const question = faqItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-                const answer = faqItems[i].getElementsByTagName('p')[0].innerText.toLowerCase();
-                if (question.includes(searchInput) || answer.includes(searchInput)) {
-                    faqItems[i].style.display = '';
-                } else {
-                    faqItems[i].style.display = 'none';
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs · MEDSETU</title>
+<meta name="description" content="Answers about MEDSETU monitoring, documents, accounts and privacy.">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 36'%3E%3Cpath d='M2 20h14l5-9 7 22 8-31 6 18h20' fill='none' stroke='%232a26ee' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/medsetu.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./health-monitoring.html">Health Monitoring</a>
-            <a href="./upload-documents.html">Upload Documents</a>
-            <a href="./access-documents.html">Access Documents</a>
-            <a href="./about.html">About</a>
-            <a href="./help.html">Help</a>
-            <a href="./faqs.html">FAQs</a>
-            <a href="./review.html">Review</a>
-        </div>
-        <div class="medsetu">MEDSETU</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="./index.html" class="brand" aria-label="MEDSETU home"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="./index.html">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html" aria-current="page">FAQs</a><a href="./review.html">Review</a></nav>
+    <div class="header-actions">
+      <a href="./login.html" class="btn btn-sm">Login <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+      <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
     </div>
-    
-    <div class="container">
-        <div class="search-bar-container">
-            <input type="text" id="faq-search" onkeyup="filterFAQs()" placeholder="What are you looking for?">
-        </div>
-        <div class="faq-section">
-            <div class="faq-item">
-                <h3>1. What is MEDSETU?</h3>
-                <p>MEDSETU is a platform designed to help users manage their health records and access medical documents conveniently in one place.</p>
-            </div>
-            <div class="faq-item">
-                <h3>2. Who can use MEDSETU?</h3>
-                <p>Anyone who needs a digital solution for health monitoring and document access, including patients, doctors, and healthcare professionals.</p>
-            </div>
-            <div class="faq-item">
-                <h3>3. Is MEDSETU free to use?</h3>
-                <p>Yes, MEDSETU offers free basic services. Additional features may require a subscription or one-time payment.</p>
-            </div>
-            <div class="faq-item">
-                <h3>4. How do I create an account on MEDSETU?</h3>
-                <p>Click on the "Login" button on the homepage and follow the sign-up instructions to create an account.</p>
-            </div>
-            <div class="faq-item">
-                <h3>5. What health metrics can I track on MEDSETU?</h3>
-                <p>MEDSETU allows you to monitor vital health parameters like blood pressure, sugar levels, heart rate, and more.</p>
-            </div>
-            <div class="faq-item">
-                <h3>6. Can I sync data from wearable devices?</h3>
-                <p>Currently, MEDSETU supports manual data entry. Future updates may include integration with wearable health devices.</p>
-            </div>
-            <div class="faq-item">
-                <h3>7. What types of documents can I upload?</h3>
-                <p>You can upload medical reports, prescriptions, lab test results, and other health-related documents in PDF, JPEG, and PNG formats.</p>
-            </div>
-            <div class="faq-item">
-                <h3>8. How secure are my documents on MEDSETU?</h3>
-                <p>Your documents are securely stored using encryption protocols to ensure maximum privacy and security.</p>
-            </div>
-            <div class="faq-item">
-                <h3>9. Can I share my documents with doctors?</h3>
-                <p>Yes, MEDSETU allows you to securely share your health records with doctors via a link or direct access.</p>
-            </div>
-            <div class="faq-item">
-                <h3>10. I forgot my password. How do I reset it?</h3>
-                <p>Click on the "Forgot Password?" link on the login page and follow the instructions to reset your password.</p>
-            </div>
-            <div class="faq-item">
-                <h3>11. I uploaded the wrong document. How can I delete it?</h3>
-                <p>Go to the "Upload Documents" section, find the document, and use the delete option to remove it.</p>
-            </div>
-            <div class="faq-item">
-                <h3>11. Why am I unable to upload my documents?
-                    </h3>
-                <p>Ensure your file format is supported (PDF, JPEG, PNG) and that it does not exceed the maximum file size limit.
-                    Privacy & Security</p>
-            </div>
-            <div class="faq-item">
+  </div>
+</header>
+<main id="main">
+
+<section class="hero wrap" style="padding-bottom:24px">
+  <h1 class="display display-xl">Questions,<br><span class="blue">answered.</span></h1>
+  <p class="lede">Search, or browse by topic. Can&rsquo;t find it? <a href="./help.html" class="link-under" style="padding-bottom:2px">Ask us</a></p>
+</section>
+<section class="wrap">
+  <div class="faq-tools">
+    <label class="search"><span class="skip">Search the FAQs</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input type="search" id="faq-search" placeholder="What are you looking for?" autocomplete="off"><button class="clear" type="button" aria-label="Clear search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8"/></svg></button></label>
+    <div class="chips" role="group" aria-label="Filter by topic"><button class="chip" type="button" data-cat="all" aria-pressed="true">All <small>16</small></button><button class="chip" type="button" data-cat="start" aria-pressed="false">Getting started <small>4</small></button><button class="chip" type="button" data-cat="monitoring" aria-pressed="false">Health monitoring <small>6</small></button><button class="chip" type="button" data-cat="documents" aria-pressed="false">Documents <small>4</small></button><button class="chip" type="button" data-cat="privacy" aria-pressed="false">Account &amp; privacy <small>2</small></button></div>
+    <div class="faq-meta"><span id="faq-count" aria-live="polite">16 of 16 questions</span><button type="button" id="faq-toggle">Expand all</button></div>
+  </div>
+  <div id="faq-list"><section class="faq-group" aria-labelledby="g-start"><h2 id="g-start">Getting started</h2><details class="faq" id="what-is" data-cat="start"><summary><span class="q">What is MEDSETU?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>MEDSETU brings two things together: real-time ECG monitoring, and one place for your medical records. It was built as a project at COEP Technological University to connect patients and doctors.</p></div></div></details><details class="faq" id="who" data-cat="start"><summary><span class="q">Who can use MEDSETU?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Patients who want to follow their heart health and keep their documents together, and doctors and healthcare professionals who need to review them.</p></div></div></details><details class="faq" id="free" data-cat="start"><summary><span class="q">Is MEDSETU free to use?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Yes. MEDSETU is a student prototype and everything in it is free to explore. There are no payments or subscriptions.</p></div></div></details><details class="faq" id="login" data-cat="start"><summary><span class="q">How do I log in?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Click <strong>Login</strong>, choose <strong>Patient</strong> or <strong>Doctor</strong>, then enter a username and password. In this prototype any details open the demo portal, and nothing you type is stored.</p></div></div></details></section><section class="faq-group" aria-labelledby="g-monitoring"><h2 id="g-monitoring">Health monitoring</h2><details class="faq" id="what-track" data-cat="monitoring"><summary><span class="q">What does MEDSETU monitor?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Your ECG: the electrical signal of your heart, read through skin electrodes by the MEDSETU ECG prototype. The <a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">live dashboard</a> shows the filtered trace, heart rate, R-peaks and the signal range.</p></div></div></details><details class="faq" id="how-live" data-cat="monitoring"><summary><span class="q">How does live data reach the dashboard?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>The ECG device is Arduino-based. A Python script streams its filtered readings to the cloud, and the dashboard checks for new data every two seconds.</p></div></div></details><details class="faq" id="no-signal" data-cat="monitoring"><summary><span class="q">The dashboard says &ldquo;No signal&rdquo;. Is it broken?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>No. It means the ECG device isn&rsquo;t streaming at the moment. You can still open the patient database on the dashboard and review stored recordings.</p></div></div></details><details class="faq" id="ai" data-cat="monitoring"><summary><span class="q">Can I get a summary of my ECG?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Yes. On the dashboard, <strong>Generate report</strong> sends the recent signal to Google&rsquo;s Gemini AI and returns a written summary you can download as a PDF.</p><p>It is AI-generated and for information only. Always talk to a licensed doctor.</p></div></div></details><details class="faq" id="wearables" data-cat="monitoring"><summary><span class="q">Can I sync data from wearable devices?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Not yet. Monitoring currently works with the MEDSETU ECG prototype. Wearable integrations may come in a future version.</p></div></div></details><details class="faq" id="medical-device" data-cat="monitoring"><summary><span class="q">Is MEDSETU a medical device?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>No. It is a working student prototype and is not certified for diagnosis. Use it to understand and share your data, not to replace a doctor.</p></div></div></details></section><section class="faq-group" aria-labelledby="g-documents"><h2 id="g-documents">Documents</h2><details class="faq" id="upload-types" data-cat="documents"><summary><span class="q">What types of documents can I upload?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Medical reports, prescriptions, lab test results and other health documents, as PDF, JPEG or PNG files.</p></div></div></details><details class="faq" id="share" data-cat="documents"><summary><span class="q">Can I share my documents with my doctor?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>That&rsquo;s what the doctor portal is for: it opens <strong>Access Documents</strong>, so a doctor can review the records their patient shares.</p></div></div></details><details class="faq" id="delete" data-cat="documents"><summary><span class="q">I uploaded the wrong document. How do I remove it?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Go to <strong>Upload Documents</strong>, find the file and use its delete option.</p></div></div></details><details class="faq" id="upload-fails" data-cat="documents"><summary><span class="q">Why can&rsquo;t I upload my document?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Check that the file is a PDF, JPEG or PNG, and that it is within the maximum file size. If it still fails, <a href="./help.html">contact us</a>.</p></div></div></details></section><section class="faq-group" aria-labelledby="g-privacy"><h2 id="g-privacy">Account &amp; privacy</h2><details class="faq" id="password" data-cat="privacy"><summary><span class="q">I forgot my password. How do I reset it?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>In this prototype, accounts aren&rsquo;t stored, so there is nothing to reset: any username and password opens the demo portal.</p></div></div></details><details class="faq" id="secure" data-cat="privacy"><summary><span class="q">How secure are my documents?</span><span class="plus"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg></span></summary><div class="answer"><div><p>Because MEDSETU is a prototype, please don&rsquo;t upload real medical documents. A production version would store records with encryption and access controls.</p></div></div></details></section></div>
+  <div class="faq-empty" id="faq-empty">
+    <h2 class="display display-md">No match for &ldquo;<span class="term"></span>&rdquo;.</h2>
+    <p class="lede" style="margin-top:12px">Try another word, or ask us directly.</p>
+    <div class="hero-actions"><a href="./help.html" class="btn btn-solid">Get help <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="./index.html" class="brand"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
+        <p>Real-time ECG monitoring and one home for medical records. A project from COEP Technological University.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer"><a href="./index.html">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a><a href="./login.html">Login</a><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">Live ECG dashboard</a></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MEDSETU. A student prototype, not a medical device.</span>
+      <span>Built by <a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener">Aryan Agarwal</a></span>
+    </div>
+  </div>
+</footer>
+<script src="./assets/site.js"></script>
 <!-- Portfolio link tab -->
 <style>.aa-portfolio-tab{position:fixed;right:0;top:50%;z-index:2147483000;display:flex;align-items:center;gap:10px;writing-mode:vertical-rl;padding:18px 11px;background:#2a26ee;color:#f7f4ee;font:600 13px/1 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:10px 0 0 10px;box-shadow:0 10px 28px -10px rgba(21,21,21,.45);transform:translate(0,-50%);transition:padding .45s cubic-bezier(.16,1,.3,1),background-color .3s}.aa-portfolio-tab:hover,.aa-portfolio-tab:focus-visible{padding-right:17px;background:#1c19b8;color:#f7f4ee;text-decoration:none}.aa-portfolio-tab:focus-visible{outline:2px solid #f7f4ee;outline-offset:-5px}.aa-portfolio-tab svg{flex:none;writing-mode:horizontal-tb}.aa-portfolio-tab .aa-ring{width:20px;height:12px}.aa-portfolio-tab .aa-arrow{width:14px;height:14px;transition:transform .45s cubic-bezier(.16,1,.3,1)}.aa-portfolio-tab:hover .aa-arrow{transform:translate(2px,-2px)}@media (max-width:640px){.aa-portfolio-tab{top:auto;bottom:88px;transform:none;padding:12px 8px;font-size:11px;gap:8px}.aa-portfolio-tab:hover{padding-right:12px}}@media print{.aa-portfolio-tab{display:none}}@media (prefers-reduced-motion:reduce){.aa-portfolio-tab,.aa-portfolio-tab .aa-arrow{transition:none}}</style>
 <a class="aa-portfolio-tab" href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener" aria-label="Visit Aryan Agarwal's portfolio (opens in a new tab)"><svg class="aa-ring" viewBox="0 0 120 70" aria-hidden="true"><ellipse cx="60" cy="35" rx="50" ry="24" transform="rotate(-14 60 35)" fill="none" stroke="currentColor" stroke-width="14"/></svg><span>Visit my portfolio</span><svg class="aa-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></a>
+</body>
+</html>
