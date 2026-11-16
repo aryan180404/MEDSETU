@@ -1,98 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEDSETU - Your Health Companion</title>
-    <style>
-        @font-face {
-            font-family: 'Artifakt Element';
-            src: url('ArtifaktElement-Regular.woff2') format('woff2'),
-                 url('ArtifaktElement-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        body {
-            font-family: 'Artifakt Element', sans-serif;
-            background-color: #fff;
-            color: #000;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            font-size: 14px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            font-size: 18px;
-        }
-        .nav-links a, .login {
-            text-decoration: none;
-            color: #000;
-            cursor: pointer;
-        }
-        .login {
-            font-size: 25px;
-            font-weight: bold;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-grow: 1;
-            height: 80vh;
-            padding: 0 10%;
-        }
-        .title {
-            font-size: 40px;
-        }
-        .image-container {
-            width: 300px;
-            height: 200px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-        .trust-bar {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEDSETU · Real-time ECG and medical records</title>
+<meta name="description" content="MEDSETU brings real-time ECG monitoring and your medical records into one place.">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 36'%3E%3Cpath d='M2 20h14l5-9 7 22 8-31 6 18h20' fill='none' stroke='%232a26ee' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/medsetu.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./health-monitoring.html">Health Monitoring</a>
-            <a href="./upload-documents.html">Upload Documents</a>
-            <a href="./access-documents.html">Access Documents</a>
-            <a href="./about.html">About</a>
-            <a href="./help.html">Help</a>
-            <a href="./faqs.html">FAQs</a>
-            <a href="./review.html">Review</a>
-        </div>
-        <div class="login" onclick="location.href='./login.html'">Login</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="./index.html" class="brand" aria-label="MEDSETU home"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="./index.html" aria-current="page">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a></nav>
+    <div class="header-actions">
+      <a href="./login.html" class="btn btn-sm">Login <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+      <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
     </div>
-    
-    <div class="container">
-        <div>
-            <div class="title">MEDSETU</div>
-            <div class="trust-bar">Trusted by 10,000+ Customers</div>
-        </div>
-        <div class="image-container">
-            <img src="https://picsum.photos/1500/500" width="1500" height="500"/>
-        </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <h1 class="display display-xl">Your heart,<br><span class="blue">on record.</span></h1>
+      <p class="lede">MEDSETU bridges patients and doctors: real-time ECG monitoring, plus one secure home for reports, prescriptions and lab results.</p>
+      <div class="hero-actions">
+        <a href="./login.html" class="btn btn-solid">Log in <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+        <a href="./health-monitoring.html" class="link-under">See health monitoring <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+      </div>
     </div>
+    <figure class="sticker reveal">
+      <img src="./assets/hero.jpg" alt="A patient wearing ECG electrodes at home while a doctor reviews the trace on a monitor" width="900" height="900">
+      <figcaption><span>Live ECG</span><span>Lead I</span></figcaption>
+    </figure>
+  </div>
+  <div class="hero-trace"><svg class="trace " viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0,70 L120,70 L134,62 L146,70 L166,70 L172,80 L180,12 L189,96 L196,70 L220,70 L238,54 L260,70 L460,70 L474,62 L486,70 L506,70 L512,80 L520,12 L529,96 L536,70 L560,70 L578,54 L600,70 L800,70 L814,62 L826,70 L846,70 L852,80 L860,12 L869,96 L876,70 L900,70 L918,54 L940,70 L1200,70"/><circle class="beat" cx="860" cy="12" r="5"/></svg></div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head reveal">
+    <h2 class="display display-lg">Three things,<br>done properly.</h2>
+    <p>Everything a patient or a doctor needs, a click from the home page.</p>
+  </div>
+  <div class="rows">
+    <a class="row-link reveal" href="./health-monitoring.html">
+      <img src="./assets/monitor.jpg" alt="" loading="lazy">
+      <h3>Health monitoring</h3>
+      <p class="row-text muted">Track, analyse and access your ECG in real time, from anywhere.</p>
+      <span class="go"><svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+    </a>
+    <a class="row-link reveal" href="./upload-documents.html">
+      <img src="./assets/doctor.jpg" alt="" loading="lazy">
+      <h3>Upload documents</h3>
+      <p class="row-text muted">Store reports, prescriptions and lab results as PDF, JPEG or PNG.</p>
+      <span class="go"><svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+    </a>
+    <a class="row-link reveal" href="./access-documents.html">
+      <img src="./assets/hospital.jpg" alt="" loading="lazy">
+      <h3>Access documents</h3>
+      <p class="row-text muted">Open your records whenever you need them, and bring them to every appointment.</p>
+      <span class="go"><svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap section">
+    <div class="band-grid">
+      <h2 class="display display-lg reveal">Built at COEP.<br><span class="soft">Built for every clinic.</span></h2>
+      <div class="reveal">
+        <p class="lede">MEDSETU began at COEP Technological University to fix two problems: patients can&rsquo;t see their health data in real time, and their records are scattered across hospitals, inboxes and paper files.</p>
+        <p style="margin-top:28px"><a href="./about.html" class="link-under">Read the story <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a></p>
+      </div>
+    </div>
+    <dl class="facts reveal">
+      <div><dt>Signal</dt><dd>ECG, Lead I</dd></div>
+      <div><dt>Hardware</dt><dd>Arduino ECG prototype</dd></div>
+      <div><dt>Records</dt><dd>PDF, JPEG, PNG</dd></div>
+      <div><dt>Portals</dt><dd>Patient &amp; doctor</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head reveal">
+    <h2 class="display display-lg">Questions?</h2>
+    <p>Answers about monitoring, documents, accounts and privacy, all in one place.</p>
+  </div>
+  <div class="hero-actions reveal" style="margin-top:0">
+    <a href="./faqs.html" class="btn btn-solid">Read the FAQs <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+    <a href="./help.html" class="link-under">Get help <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="./index.html" class="brand"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
+        <p>Real-time ECG monitoring and one home for medical records. A project from COEP Technological University.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer"><a href="./index.html">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a><a href="./login.html">Login</a><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">Live ECG dashboard</a></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MEDSETU. A student prototype, not a medical device.</span>
+      <span>Built by <a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener">Aryan Agarwal</a></span>
+    </div>
+  </div>
+</footer>
+<script src="./assets/site.js"></script>
 <!-- Portfolio link tab -->
 <style>.aa-portfolio-tab{position:fixed;right:0;top:50%;z-index:2147483000;display:flex;align-items:center;gap:10px;writing-mode:vertical-rl;padding:18px 11px;background:#2a26ee;color:#f7f4ee;font:600 13px/1 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:10px 0 0 10px;box-shadow:0 10px 28px -10px rgba(21,21,21,.45);transform:translate(0,-50%);transition:padding .45s cubic-bezier(.16,1,.3,1),background-color .3s}.aa-portfolio-tab:hover,.aa-portfolio-tab:focus-visible{padding-right:17px;background:#1c19b8;color:#f7f4ee;text-decoration:none}.aa-portfolio-tab:focus-visible{outline:2px solid #f7f4ee;outline-offset:-5px}.aa-portfolio-tab svg{flex:none;writing-mode:horizontal-tb}.aa-portfolio-tab .aa-ring{width:20px;height:12px}.aa-portfolio-tab .aa-arrow{width:14px;height:14px;transition:transform .45s cubic-bezier(.16,1,.3,1)}.aa-portfolio-tab:hover .aa-arrow{transform:translate(2px,-2px)}@media (max-width:640px){.aa-portfolio-tab{top:auto;bottom:88px;transform:none;padding:12px 8px;font-size:11px;gap:8px}.aa-portfolio-tab:hover{padding-right:12px}}@media print{.aa-portfolio-tab{display:none}}@media (prefers-reduced-motion:reduce){.aa-portfolio-tab,.aa-portfolio-tab .aa-arrow{transition:none}}</style>
 <a class="aa-portfolio-tab" href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener" aria-label="Visit Aryan Agarwal's portfolio (opens in a new tab)"><svg class="aa-ring" viewBox="0 0 120 70" aria-hidden="true"><ellipse cx="60" cy="35" rx="50" ry="24" transform="rotate(-14 60 35)" fill="none" stroke="currentColor" stroke-width="14"/></svg><span>Visit my portfolio</span><svg class="aa-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></a>
