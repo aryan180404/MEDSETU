@@ -4,73 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About · MEDSETU</title>
-<meta name="description" content="Why MEDSETU exists and how it was built.">
-<meta name="theme-color" content="#f7f4ee">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 36'%3E%3Cpath d='M2 20h14l5-9 7 22 8-31 6 18h20' fill='none' stroke='%232a26ee' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="description" content="Why MEDSETU was built and by whom.">
+<meta name="theme-color" content="#f3f4f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18.5' fill='%23f3f4f1' stroke='%23c0331b' stroke-width='2'/%3E%3Cpath d='M5 22h7l2-3 2 3h2l2 3 3-15 3 18 2-6h2l2-2 2 2h3' fill='none' stroke='%23c0331b' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/medsetu.css">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Libre+Caslon+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/atlas.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a href="./index.html" class="brand" aria-label="MEDSETU home"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
-    <nav class="nav" id="site-nav" aria-label="Main"><a href="./index.html">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html" aria-current="page">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a></nav>
-    <div class="header-actions">
-      <a href="./login.html" class="btn btn-sm">Login <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
-      <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
+    <a href="./index.html" class="brand" aria-label="MEDSETU overview"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 22h7l2-3 2 3h2l2 3 3-15 3 18 2-6h2l2-2 2 2h3" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>MEDSETU</a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="./index.html">Overview</a><a href="./health-monitoring.html">Live monitor</a><a href="./about.html" aria-current="page">About</a><a href="./faqs.html">FAQs</a><a href="./help.html">Help</a></nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener" class="btn btn-red btn-sm">Live dashboard <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     </div>
   </div>
 </header>
 <main id="main">
 
-<section class="hero wrap">
-  <h1 class="display display-xl">About <span class="blue">us.</span></h1>
-  <p class="lede">MEDSETU was born out of a vision to bridge the gap between patients and healthcare providers through seamless real-time monitoring and centralised medical record management.</p>
-  <div class="hero-trace"><svg class="trace " viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0,70 L120,70 L134,62 L146,70 L166,70 L172,80 L180,12 L189,96 L196,70 L220,70 L238,54 L260,70 L460,70 L474,62 L486,70 L506,70 L512,80 L520,12 L529,96 L536,70 L560,70 L578,54 L600,70 L800,70 L814,62 L826,70 L846,70 L852,80 L860,12 L869,96 L876,70 L900,70 L918,54 L940,70 L1200,70"/><circle class="beat" cx="860" cy="12" r="5"/></svg></div>
-</section>
-<section class="band">
-  <div class="wrap section">
-    <div class="band-grid">
-      <h2 class="display display-lg reveal">Two problems.<br><span class="soft">One system.</span></h2>
-      <div class="reveal">
-        <p>Developed as a cornerstone project at COEP Technological University, MEDSETU set out to tackle two major healthcare challenges: access to real-time health data, and the fragmentation of medical records.</p>
-        <p>With a strong foundation in Instrumentation and Control Engineering, IoT and Data Science, the project brings together ECG monitoring, cloud-based data storage and clear visualisation into one health-tracking system.</p>
-        <p>What began as an academic project could change remote healthcare, telemedicine and long-term patient monitoring. MEDSETU is more than a system: it is a step toward more connected, efficient and patient-centred healthcare.</p>
-      </div>
-    </div>
-    <dl class="facts reveal">
-      <div><dt>Where</dt><dd>COEP Technological University, Pune</dd></div>
-      <div><dt>Discipline</dt><dd>Instrumentation &amp; Control</dd></div>
-      <div><dt>Built with</dt><dd>IoT &amp; Data Science</dd></div>
-      <div><dt>Status</dt><dd>Working prototype</dd></div>
-    </dl>
-  </div>
-</section>
-<section class="section wrap">
-  <div class="tiles">
-    <a class="tile reveal" href="./health-monitoring.html"><div class="tile-media"><img src="./assets/monitor.jpg" alt="" loading="lazy"></div><div class="tile-body"><h2>Real-time ECG</h2><p>Live trace, heart rate and R-peaks.</p><span class="tile-foot">Health monitoring <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></div></a>
-    <a class="tile reveal" data-delay="90" href="./upload-documents.html"><div class="tile-media"><img src="./assets/doctor.jpg" alt="" loading="lazy"></div><div class="tile-body"><h2>One record</h2><p>Reports, prescriptions and lab results together.</p><span class="tile-foot">Upload documents <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></div></a>
-    <a class="tile reveal" data-delay="180" href="./faqs.html"><div class="tile-media"><img src="./assets/hospital.jpg" alt="" loading="lazy"></div><div class="tile-body"><h2>Questions</h2><p>How it works, what&rsquo;s supported, and privacy.</p><span class="tile-foot">Read the FAQs <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></div></a>
-  </div>
-</section>
+<section class="hero"><div class="wrap">
+  <h1 class="serif h-xl" style="max-width:14ch">A bridge between a heartbeat and the people <em>reading it.</em></h1>
+  <p class="lede"><em>Setu</em> means bridge. MEDSETU began at COEP Technological University with a simple question: why can&rsquo;t patients see their own heart data in real time, and why are their records scattered everywhere?</p>
+</div></section>
+<section class="plate"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no"></span><h2 class="serif h-lg">Where it came from.</h2></div>
+  <div class="split"><div class="notes reveal">
+<p class="lede" style="max-width:none">MEDSETU was built on a foundation in Instrumentation and Control Engineering, IoT and data science. It brings ECG monitoring, cloud-based data and clear visualisation into one working system.</p>
+<p class="lede" style="max-width:none">What began as an academic project points at remote healthcare, telemedicine and long-term monitoring: a step toward care that is more connected and more patient-centred.</p></div>
+<ol class="notes reveal" data-delay="120">
+<li><span class="n">1</span><div><h3>Instrumentation</h3><p>An Arduino ECG with careful grounding and interference shielding.</p></div></li>
+<li><span class="n">2</span><div><h3>Software</h3><p>A Python filter and streamer, and a browser dashboard that reads it live.</p></div></li>
+<li><span class="n">3</span><div><h3>Validation</h3><p>Usability and system checks with 8&ndash;10 people.</p></div></li></ol></div>
+</div></section>
+<section class="plate"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no"></span><h2 class="serif h-lg">Who built it.</h2></div>
+  <div class="contact-card reveal"><div><p class="serif">Aryan Agarwal</p><p class="cap" style="margin-top:8px">B.Tech, Instrumentation &amp; Control, COEP Technological University</p></div><a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener" class="btn">See the portfolio <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</div></section>
 
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="./index.html" class="brand"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
-        <p>Real-time ECG monitoring and one home for medical records. A project from COEP Technological University.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer"><a href="./index.html">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a><a href="./login.html">Login</a><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">Live ECG dashboard</a></nav>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 MEDSETU. A student prototype, not a medical device.</span>
-      <span>Built by <a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener">Aryan Agarwal</a></span>
-    </div>
+    <span>MEDSETU &middot; an ECG project from COEP Technological University &middot; built by <a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener">Aryan Agarwal</a></span>
+    <nav aria-label="Footer"><a href="./index.html">Overview</a><a href="./health-monitoring.html">Live monitor</a><a href="./about.html">About</a><a href="./faqs.html">FAQs</a><a href="./help.html">Help</a><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">Live dashboard</a></nav>
   </div>
 </footer>
 <script src="./assets/site.js"></script>
