@@ -3,117 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEDSETU · Real-time ECG and medical records</title>
-<meta name="description" content="MEDSETU brings real-time ECG monitoring and your medical records into one place.">
-<meta name="theme-color" content="#f7f4ee">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 36'%3E%3Cpath d='M2 20h14l5-9 7 22 8-31 6 18h20' fill='none' stroke='%232a26ee' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>MEDSETU · An ECG, from electrode to browser</title>
+<meta name="description" content="MEDSETU: an Arduino ECG streamed live to a web dashboard, with AI-written readings. A COEP Technological University project.">
+<meta name="theme-color" content="#f3f4f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18.5' fill='%23f3f4f1' stroke='%23c0331b' stroke-width='2'/%3E%3Cpath d='M5 22h7l2-3 2 3h2l2 3 3-15 3 18 2-6h2l2-2 2 2h3' fill='none' stroke='%23c0331b' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/medsetu.css">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Libre+Caslon+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/atlas.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a href="./index.html" class="brand" aria-label="MEDSETU home"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
-    <nav class="nav" id="site-nav" aria-label="Main"><a href="./index.html" aria-current="page">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a></nav>
-    <div class="header-actions">
-      <a href="./login.html" class="btn btn-sm">Login <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
-      <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
+    <a href="./index.html" class="brand" aria-label="MEDSETU overview"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 22h7l2-3 2 3h2l2 3 3-15 3 18 2-6h2l2-2 2 2h3" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>MEDSETU</a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="./index.html" aria-current="page">Overview</a><a href="./health-monitoring.html">Live monitor</a><a href="./about.html">About</a><a href="./faqs.html">FAQs</a><a href="./help.html">Help</a></nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener" class="btn btn-red btn-sm">Live dashboard <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     </div>
   </div>
 </header>
 <main id="main">
 
-<section class="hero wrap">
-  <div class="hero-grid">
-    <div>
-      <h1 class="display display-xl">Your heart,<br><span class="blue">on record.</span></h1>
-      <p class="lede">MEDSETU bridges patients and doctors: real-time ECG monitoring, plus one secure home for reports, prescriptions and lab results.</p>
-      <div class="hero-actions">
-        <a href="./login.html" class="btn btn-solid">Log in <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
-        <a href="./health-monitoring.html" class="link-under">See health monitoring <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
-      </div>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <h1 class="serif h-xl">An ECG, from <em>electrode</em> to browser.</h1>
+    <p class="lede">MEDSETU reads the heart&rsquo;s electrical signal with an Arduino ECG, cleans it, streams it to the web and draws it live, with an AI-written reading on request.</p>
+    <div class="actions">
+      <a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener" class="btn btn-red">Open the live dashboard <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#pipeline" class="link">See how it works</a>
     </div>
-    <figure class="sticker reveal">
-      <img src="./assets/hero.jpg" alt="A patient wearing ECG electrodes at home while a doctor reviews the trace on a monitor" width="900" height="900">
-      <figcaption><span>Live ECG</span><span>Lead I</span></figcaption>
-    </figure>
+    <p class="status-line"><i></i>Live when the device is running. Recorded demo patients are always available.</p>
   </div>
-  <div class="hero-trace"><svg class="trace " viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0,70 L120,70 L134,62 L146,70 L166,70 L172,80 L180,12 L189,96 L196,70 L220,70 L238,54 L260,70 L460,70 L474,62 L486,70 L506,70 L512,80 L520,12 L529,96 L536,70 L560,70 L578,54 L600,70 L800,70 L814,62 L826,70 L846,70 L852,80 L860,12 L869,96 L876,70 L900,70 L918,54 L940,70 L1200,70"/><circle class="beat" cx="860" cy="12" r="5"/></svg></div>
-</section>
-
-<section class="section wrap">
-  <div class="section-head reveal">
-    <h2 class="display display-lg">Three things,<br>done properly.</h2>
-    <p>Everything a patient or a doctor needs, a click from the home page.</p>
-  </div>
-  <div class="rows">
-    <a class="row-link reveal" href="./health-monitoring.html">
-      <img src="./assets/monitor.jpg" alt="" loading="lazy">
-      <h3>Health monitoring</h3>
-      <p class="row-text muted">Track, analyse and access your ECG in real time, from anywhere.</p>
-      <span class="go"><svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
-    <a class="row-link reveal" href="./upload-documents.html">
-      <img src="./assets/doctor.jpg" alt="" loading="lazy">
-      <h3>Upload documents</h3>
-      <p class="row-text muted">Store reports, prescriptions and lab results as PDF, JPEG or PNG.</p>
-      <span class="go"><svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
-    <a class="row-link reveal" href="./access-documents.html">
-      <img src="./assets/hospital.jpg" alt="" loading="lazy">
-      <h3>Access documents</h3>
-      <p class="row-text muted">Open your records whenever you need them, and bring them to every appointment.</p>
-      <span class="go"><svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
-    </a>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap section">
-    <div class="band-grid">
-      <h2 class="display display-lg reveal">Built at COEP.<br><span class="soft">Built for every clinic.</span></h2>
-      <div class="reveal">
-        <p class="lede">MEDSETU began at COEP Technological University to fix two problems: patients can&rsquo;t see their health data in real time, and their records are scattered across hospitals, inboxes and paper files.</p>
-        <p style="margin-top:28px"><a href="./about.html" class="link-under">Read the story <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a></p>
-      </div>
-    </div>
-    <dl class="facts reveal">
-      <div><dt>Signal</dt><dd>ECG, Lead I</dd></div>
-      <div><dt>Hardware</dt><dd>Arduino ECG prototype</dd></div>
-      <div><dt>Records</dt><dd>PDF, JPEG, PNG</dd></div>
-      <div><dt>Portals</dt><dd>Patient &amp; doctor</dd></div>
-    </dl>
-  </div>
-</section>
-
-<section class="section wrap">
-  <div class="section-head reveal">
-    <h2 class="display display-lg">Questions?</h2>
-    <p>Answers about monitoring, documents, accounts and privacy, all in one place.</p>
-  </div>
-  <div class="hero-actions reveal" style="margin-top:0">
-    <a href="./faqs.html" class="btn btn-solid">Read the FAQs <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
-    <a href="./help.html" class="link-under">Get help <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
-  </div>
-</section>
+  <figure class="figure reveal">
+  <div class="fig-head"><span class="plate-no">Plate I</span><span>The conducting system</span></div>
+  <svg class="heart" data-anim viewBox="0 0 420 360" role="img" aria-labelledby="heart-t heart-d">
+    <title id="heart-t">How an electrical impulse travels through the heart</title>
+    <desc id="heart-d">A schematic heart. A pulse starts at the SA node, pauses at the AV node, then runs down the bundle of His into the Purkinje fibres while the atria and then the ventricles light up.</desc>
+    <defs>
+      <path id="hs" d="M120 120 C100 170 110 240 170 290 C205 318 235 332 252 334 C275 320 320 270 340 210 C355 165 345 120 315 100 C290 84 255 86 232 100 C215 86 180 82 160 92 C140 100 126 108 120 120 Z"/>
+      <clipPath id="atria"><rect x="0" y="0" width="420" height="166"/></clipPath>
+      <clipPath id="vents"><rect x="0" y="166" width="420" height="200"/></clipPath>
+      <path id="p-main" d="M160 112 L226 162 L232 205"/>
+      <path id="p-left" d="M232 205 C238 262 244 300 252 322 C285 300 318 255 332 196"/>
+      <path id="p-right" d="M232 205 C222 255 208 290 200 302 C168 286 140 242 126 182"/>
+    </defs>
+    <use href="#hs" class="chamber" clip-path="url(#atria)"><animate attributeName="opacity" dur="1.6s" repeatCount="indefinite" values="0;0.2;0;0" keyTimes="0;0.1;0.24;1"/></use>
+    <use href="#hs" class="chamber" clip-path="url(#vents)"><animate attributeName="opacity" dur="1.6s" repeatCount="indefinite" values="0;0;0.22;0.06;0" keyTimes="0;0.38;0.52;0.76;1"/></use>
+    <path d="M150 104 V36" stroke="#16202a" stroke-width="22" fill="none"/><path d="M150 106 V36" stroke="#fbfbf9" stroke-width="18" fill="none"/>
+    <path d="M232 104 C230 58 252 38 282 40 C308 42 322 60 322 92" stroke="#16202a" stroke-width="24" fill="none"/>
+    <path d="M232 106 C230 58 252 38 282 40 C308 42 322 60 322 94" stroke="#fbfbf9" stroke-width="20" fill="none"/>
+    <use href="#hs" class="wall"/>
+    <path class="wall" d="M118 160 C180 172 270 170 344 156" stroke-dasharray="2 6"/>
+    <path class="wall" d="M228 100 L230 160" stroke-width="1.2"/>
+    <path class="wall" d="M232 168 C236 220 242 280 252 332" stroke-width="1.4"/>
+    <text x="150" y="30" text-anchor="middle" font-family="Atkinson Hyperlegible, sans-serif" font-size="12" fill="#5d6670">vena cava</text>
+    <text x="300" y="26" text-anchor="middle" font-family="Atkinson Hyperlegible, sans-serif" font-size="12" fill="#5d6670">aorta</text>
+    <use href="#p-main" class="path"/><use href="#p-left" class="path"/><use href="#p-right" class="path"/>
+    <path class="path" d="M332 196 l12 -8 M318 240 l16 2 M126 182 l-12 -8 M140 232 l-16 2 M278 292 l10 10 M176 292 l-10 10"/>
+    <circle class="node" cx="160" cy="112" r="8"/>
+    <circle class="node" cx="226" cy="162" r="8"/>
+    <circle class="pulse" r="6"><animateMotion dur="1.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0.66;0.66;1;1" keyTimes="0;0.16;0.3;0.38;1"><mpath href="#p-main"/></animateMotion><animate attributeName="opacity" dur="1.6s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.38;0.39;1"/></circle>
+    <circle class="pulse" r="5"><animateMotion dur="1.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.38;0.54;1"><mpath href="#p-left"/></animateMotion><animate attributeName="opacity" dur="1.6s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.37;0.38;0.56;1"/></circle>
+    <circle class="pulse" r="5"><animateMotion dur="1.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.38;0.54;1"><mpath href="#p-right"/></animateMotion><animate attributeName="opacity" dur="1.6s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.37;0.38;0.56;1"/></circle>
+    <line class="lead" x1="152" y1="112" x2="78" y2="112"/><text class="callout" x="62" y="118">1</text>
+    <line class="lead" x1="234" y1="162" x2="372" y2="132"/><text class="callout" x="378" y="136">2</text>
+    <line class="lead" x1="234" y1="196" x2="372" y2="196"/><text class="callout" x="378" y="202">3</text>
+    <line class="lead" x1="140" y1="232" x2="78" y2="252"/><text class="callout" x="62" y="260">4</text>
+  </svg>
+  <svg class="strip" data-anim viewBox="0 0 420 110" role="img" aria-label="ECG strip drawing one heartbeat: P wave, QRS complex, T wave" style="margin-top:14px">
+    <line class="grid-minor" x1="0" y1="0" x2="0" y2="110"/><line class="grid-minor" x1="10" y1="0" x2="10" y2="110"/><line class="grid-minor" x1="20" y1="0" x2="20" y2="110"/><line class="grid-minor" x1="30" y1="0" x2="30" y2="110"/><line class="grid-minor" x1="40" y1="0" x2="40" y2="110"/><line class="grid-minor" x1="50" y1="0" x2="50" y2="110"/><line class="grid-minor" x1="60" y1="0" x2="60" y2="110"/><line class="grid-minor" x1="70" y1="0" x2="70" y2="110"/><line class="grid-minor" x1="80" y1="0" x2="80" y2="110"/><line class="grid-minor" x1="90" y1="0" x2="90" y2="110"/><line class="grid-minor" x1="100" y1="0" x2="100" y2="110"/><line class="grid-minor" x1="110" y1="0" x2="110" y2="110"/><line class="grid-minor" x1="120" y1="0" x2="120" y2="110"/><line class="grid-minor" x1="130" y1="0" x2="130" y2="110"/><line class="grid-minor" x1="140" y1="0" x2="140" y2="110"/><line class="grid-minor" x1="150" y1="0" x2="150" y2="110"/><line class="grid-minor" x1="160" y1="0" x2="160" y2="110"/><line class="grid-minor" x1="170" y1="0" x2="170" y2="110"/><line class="grid-minor" x1="180" y1="0" x2="180" y2="110"/><line class="grid-minor" x1="190" y1="0" x2="190" y2="110"/><line class="grid-minor" x1="200" y1="0" x2="200" y2="110"/><line class="grid-minor" x1="210" y1="0" x2="210" y2="110"/><line class="grid-minor" x1="220" y1="0" x2="220" y2="110"/><line class="grid-minor" x1="230" y1="0" x2="230" y2="110"/><line class="grid-minor" x1="240" y1="0" x2="240" y2="110"/><line class="grid-minor" x1="250" y1="0" x2="250" y2="110"/><line class="grid-minor" x1="260" y1="0" x2="260" y2="110"/><line class="grid-minor" x1="270" y1="0" x2="270" y2="110"/><line class="grid-minor" x1="280" y1="0" x2="280" y2="110"/><line class="grid-minor" x1="290" y1="0" x2="290" y2="110"/><line class="grid-minor" x1="300" y1="0" x2="300" y2="110"/><line class="grid-minor" x1="310" y1="0" x2="310" y2="110"/><line class="grid-minor" x1="320" y1="0" x2="320" y2="110"/><line class="grid-minor" x1="330" y1="0" x2="330" y2="110"/><line class="grid-minor" x1="340" y1="0" x2="340" y2="110"/><line class="grid-minor" x1="350" y1="0" x2="350" y2="110"/><line class="grid-minor" x1="360" y1="0" x2="360" y2="110"/><line class="grid-minor" x1="370" y1="0" x2="370" y2="110"/><line class="grid-minor" x1="380" y1="0" x2="380" y2="110"/><line class="grid-minor" x1="390" y1="0" x2="390" y2="110"/><line class="grid-minor" x1="400" y1="0" x2="400" y2="110"/><line class="grid-minor" x1="410" y1="0" x2="410" y2="110"/><line class="grid-minor" x1="420" y1="0" x2="420" y2="110"/><line class="grid-minor" x1="0" y1="0" x2="420" y2="0"/><line class="grid-minor" x1="0" y1="10" x2="420" y2="10"/><line class="grid-minor" x1="0" y1="20" x2="420" y2="20"/><line class="grid-minor" x1="0" y1="30" x2="420" y2="30"/><line class="grid-minor" x1="0" y1="40" x2="420" y2="40"/><line class="grid-minor" x1="0" y1="50" x2="420" y2="50"/><line class="grid-minor" x1="0" y1="60" x2="420" y2="60"/><line class="grid-minor" x1="0" y1="70" x2="420" y2="70"/><line class="grid-minor" x1="0" y1="80" x2="420" y2="80"/><line class="grid-minor" x1="0" y1="90" x2="420" y2="90"/><line class="grid-minor" x1="0" y1="100" x2="420" y2="100"/><line class="grid-minor" x1="0" y1="110" x2="420" y2="110"/><line class="grid-major" x1="0" y1="0" x2="0" y2="110"/><line class="grid-major" x1="50" y1="0" x2="50" y2="110"/><line class="grid-major" x1="100" y1="0" x2="100" y2="110"/><line class="grid-major" x1="150" y1="0" x2="150" y2="110"/><line class="grid-major" x1="200" y1="0" x2="200" y2="110"/><line class="grid-major" x1="250" y1="0" x2="250" y2="110"/><line class="grid-major" x1="300" y1="0" x2="300" y2="110"/><line class="grid-major" x1="350" y1="0" x2="350" y2="110"/><line class="grid-major" x1="400" y1="0" x2="400" y2="110"/><line class="grid-major" x1="0" y1="10" x2="420" y2="10"/><line class="grid-major" x1="0" y1="60" x2="420" y2="60"/><line class="grid-major" x1="0" y1="110" x2="420" y2="110"/>
+    <path class="trace" d="M0 62 L40 62 Q55 50 70 52 Q85 50 96 62 L164 62 L172 68 L186 14 L196 84 L204 62 L262 62 Q290 38 318 62 L420 62" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+      <animate attributeName="stroke-dashoffset" dur="1.6s" repeatCount="indefinite" values="1;0;0" keyTimes="0;0.85;1"/>
+      <animate attributeName="opacity" dur="1.6s" repeatCount="indefinite" values="1;1;0" keyTimes="0;0.9;1"/>
+    </path>
+    <text class="wave-label" x="64" y="40">P</text><text class="wave-label" x="176" y="104">QRS</text><text class="wave-label" x="284" y="30">T</text>
+  </svg>
+  <ol class="legend"><li>SA node: the heart&rsquo;s pacemaker</li><li>AV node: a deliberate pause</li><li>Bundle of His</li><li>Purkinje fibres</li></ol>
+  <figcaption class="figcap"><b>Fig. 1</b><span>One heartbeat. The impulse (red) fires, pauses at the AV node, then spreads through the ventricles: that sequence is exactly what the ECG strip records.</span></figcaption>
+</figure>
+</div></section>
+<section class="plate" id="pipeline"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no">Plate II</span><h2 class="serif h-lg">From skin to screen, in six steps.</h2><p class="lede">Every part of the pipeline was built for this project: the hardware, the filtering, the streaming and the dashboard.</p></div>
+  <div style="position:relative"><div class="wire" aria-hidden="true"><span class="packet"></span><span class="packet"></span><span class="packet"></span></div><ol class="pipeline"><li class="station reveal" data-delay="0"><div class="icon"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="16" cy="18" r="8" stroke="currentColor" stroke-width="2"/><circle cx="48" cy="18" r="8" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="50" r="8" stroke="currentColor" stroke-width="2"/><circle class="hot" cx="16" cy="18" r="3" fill="currentColor"><animate attributeName="r" values="2;4;2" dur="1.6s" repeatCount="indefinite"/></circle><circle class="hot" cx="48" cy="18" r="3" fill="currentColor"><animate attributeName="r" values="2;4;2" dur="1.6s" begin="0.2s" repeatCount="indefinite"/></circle><circle cx="32" cy="50" r="3" fill="currentColor"/><path d="M24 18h16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg></div><span class="step">01</span><h3>Electrodes</h3><p>Skin electrodes on the right and left arm pick up the heart&rsquo;s tiny voltage (Lead I).</p></li><li class="station reveal" data-delay="80"><div class="icon"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="6" y="14" width="52" height="36" rx="3" stroke="currentColor" stroke-width="2"/><rect x="24" y="24" width="16" height="16" stroke="currentColor" stroke-width="2"/><path d="M12 10v4M18 10v4M24 10v4M30 10v4M36 10v4M42 10v4M48 10v4M54 10v4M12 50v4M18 50v4M24 50v4" stroke="currentColor" stroke-width="2"/><circle class="hot" cx="50" cy="22" r="2.5" fill="currentColor"><animate attributeName="opacity" values="1;0.15;1" dur="0.8s" repeatCount="indefinite"/></circle></svg></div><span class="step">02</span><h3>Arduino ECG</h3><p>The prototype board amplifies the signal and samples it with its ADC.</p></li><li class="station reveal" data-delay="160"><div class="icon"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="6" y="10" width="52" height="44" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 20h52" stroke="currentColor" stroke-width="2"/><path d="M12 36l4-6 3 9 3-11 3 12 3-7 2 3h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity="0.45"/><path class="hot" d="M38 37h6l2-6 3 12 2-6h5" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M33 33l3 4-3 4" stroke="currentColor" stroke-width="1.6"/></svg></div><span class="step">03</span><h3>Python filter</h3><p>A script cleans the noise and streams the filtered readings to the web.</p></li><li class="station reveal" data-delay="240"><div class="icon"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="10" y="8" width="44" height="48" rx="3" stroke="currentColor" stroke-width="2"/><path d="M10 20h44M10 32h44M10 44h44M26 8v48" stroke="currentColor" stroke-width="1.5"/><rect class="hot" x="27" y="45" width="26" height="10" fill="currentColor" opacity="0.25"><animate attributeName="y" values="45;21;45" keyTimes="0;0.5;1" dur="3s" repeatCount="indefinite"/></rect></svg></div><span class="step">04</span><h3>Google Sheet</h3><p>Each reading lands as a timestamped row the dashboard can fetch.</p></li><li class="station reveal" data-delay="320"><div class="icon"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="4" y="10" width="56" height="40" rx="3" stroke="currentColor" stroke-width="2"/><path d="M24 56h16M32 50v6" stroke="currentColor" stroke-width="2"/><path class="hot" d="M8 32h10l3-5 3 5h4l3-14 4 22 3-8h5l3-3 3 3h7" stroke="currentColor" stroke-width="2" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.7;1" dur="1.6s" repeatCount="indefinite"/></path></svg></div><span class="step">05</span><h3>Live dashboard</h3><p>The browser checks for new rows every 2 seconds and redraws the trace.</p></li><li class="station reveal" data-delay="400"><div class="icon"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M14 6h26l10 10v42H14z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M40 6v10h10" stroke="currentColor" stroke-width="2"/><path d="M20 28h22M20 36h22M20 44h14" stroke="currentColor" stroke-width="1.6"/><path class="hot" d="M46 40c0 6 2 8 8 8-6 0-8 2-8 8 0-6-2-8-8-8 6 0 8-2 8-8z" fill="currentColor"><animateTransform attributeName="transform" type="rotate" values="0 46 48;90 46 48" dur="3s" repeatCount="indefinite"/></path></svg></div><span class="step">06</span><h3>AI report</h3><p>On request, Gemini writes a plain-language reading, downloadable as a PDF.</p></li></ol></div><p class="figcap reveal" style="margin-top:28px"><b>Fig. 2</b><span>The data path. Each red dot is a reading on its way to the dashboard.</span></p>
+</div></section>
+<section class="plate"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no">Plate III</span><h2 class="serif h-lg">The hardware, and the noise.</h2><p class="lede">A heartbeat is about a thousandth of a volt at the skin. Getting it clean was the real engineering problem.</p></div>
+  <div class="split"><figure class="figure reveal">
+  <svg class="einthoven" viewBox="0 0 360 300" role="img" aria-label="Einthoven's triangle: electrodes on the right arm, left arm and left leg. Lead I runs from right arm to left arm.">
+    <path class="edge" d="M60 86 L180 270 L300 86"/>
+    <path class="lead1" d="M72 86 L288 86"/>
+    <path d="M280 78 L294 86 L280 94" fill="none" stroke="#c0331b" stroke-width="3"/>
+    <circle class="vertex" cx="60" cy="86" r="12"/><circle class="vertex" cx="300" cy="86" r="12"/><circle class="vertex" cx="180" cy="270" r="12"/>
+    <circle cx="60" cy="86" r="4" fill="#16202a"/><circle cx="300" cy="86" r="4" fill="#16202a"/><circle cx="180" cy="270" r="4" fill="#16202a"/>
+    <text x="22" y="34">RA</text><text class="soft" x="22" y="54">right arm</text>
+    <text x="312" y="34" text-anchor="end">LA</text><text class="soft" x="338" y="54" text-anchor="end">left arm</text>
+    <text x="200" y="268">LL</text><text class="soft" x="200" y="288">reference</text>
+    <text class="ital" x="180" y="72" text-anchor="middle">Lead I</text>
+  </svg>
+  <figcaption class="figcap"><b>Fig. 3</b><span>Einthoven&rsquo;s triangle. MEDSETU records Lead I: the voltage between the left and right arm (LA &minus; RA).</span></figcaption>
+</figure><figure class="figure reveal" data-delay="120">
+  <svg class="board" data-anim viewBox="0 0 360 200" role="img" aria-label="Noisy raw signal enters the board; a clean filtered trace comes out. The board is grounded.">
+    <path class="noise" d="M0 70 l8 -6 6 10 6 -14 5 12 6 -8 4 18 5 -40 6 46 5 -20 6 8 6 -10 6 6 8 -4 6 4"/>
+    <rect class="pcb" x="110" y="30" width="140" height="90" rx="6"/>
+    <rect class="chip" x="160" y="55" width="40" height="40"/>
+    <path class="pin" d="M120 24h6v6h-6zM134 24h6v6h-6zM148 24h6v6h-6zM162 24h6v6h-6zM176 24h6v6h-6zM190 24h6v6h-6zM204 24h6v6h-6zM218 24h6v6h-6zM232 24h6v6h-6z"/>
+    <path class="clean" d="M250 75 h20 l4 -5 4 5 h6 l4 -26 5 40 4 -14 h8 l6 -8 6 8 h43" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.6;1" dur="2.4s" repeatCount="indefinite"/></path>
+    <path class="gnd" d="M180 120 v28 M160 148 h40 M168 156 h24 M176 164 h8"/>
+    <text x="8" y="112" font-family="Atkinson Hyperlegible, sans-serif" font-size="14" fill="#4b5560">raw</text>
+    <text x="300" y="112" font-family="Atkinson Hyperlegible, sans-serif" font-size="14" fill="#c0331b">filtered</text>
+    <text x="206" y="168" font-family="Atkinson Hyperlegible, sans-serif" font-size="14" fill="#4b5560">ground</text>
+  </svg>
+  <figcaption class="figcap"><b>Fig. 4</b><span>Most of the work was noise: careful grounding for clean ADC readings, plus shielding against mains hum and other interference.</span></figcaption>
+</figure></div>
+</div></section>
+<section class="plate"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no">Plate IV</span><h2 class="serif h-lg">Reading a single beat.</h2><p class="lede">Every heartbeat draws the same shape. Pick a part to see it on the trace.</p></div>
+  <div class="split"><figure class="figure reveal">
+  <svg class="beat-fig" viewBox="0 0 640 260" role="img" aria-label="One heartbeat with its parts labelled: P wave, PR interval, QRS complex and T wave">
+    <path class="seg seg-pr" d="M110 170 Q135 140 160 170 L220 170"/>
+    <path class="seg seg-p" d="M110 170 Q135 140 160 170"/>
+    <path class="seg seg-qrs" d="M220 170 L232 182 L256 40 L278 206 L290 170"/>
+    <path class="seg seg-t" d="M360 170 Q410 110 460 170"/>
+    <path class="trace" d="M20 170 L110 170 Q135 140 160 170 L220 170 L232 182 L256 40 L278 206 L290 170 L360 170 Q410 110 460 170 L620 170"/>
+    <text class="lbl" x="128" y="130">P</text><text class="lbl" x="222" y="204">Q</text><text class="lbl" x="250" y="30">R</text><text class="lbl" x="284" y="232">S</text><text class="lbl" x="404" y="100">T</text>
+    <path class="bracket" d="M110 236 v8 h110 v-8"/><text class="sub" x="134" y="258">PR interval</text>
+    <path class="bracket" d="M220 236 v8 h70 v-8" transform="translate(0 0)"/><text class="sub" x="236" y="258">QRS</text>
+  </svg>
+  <figcaption class="figcap"><b>Fig. 5</b><span>Anatomy of one beat. The dashboard counts the tall R peaks in the recent window to work out heart rate.</span></figcaption>
+</figure><div class="waves reveal" data-delay="120">
+  <button type="button" data-wave="p" aria-pressed="false"><b>P</b><span><strong>P wave</strong>The atria contract.</span></button>
+  <button type="button" data-wave="pr" aria-pressed="false"><b>PR</b><span><strong>PR interval</strong>The signal pauses at the AV node so the ventricles can fill.</span></button>
+  <button type="button" data-wave="qrs" aria-pressed="false"><b>QRS</b><span><strong>QRS complex</strong>The ventricles contract. The tall R peak is what the dashboard counts.</span></button>
+  <button type="button" data-wave="t" aria-pressed="false"><b>T</b><span><strong>T wave</strong>The ventricles reset for the next beat.</span></button>
+</div></div>
+</div></section>
+<section class="plate"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no">Plate V</span><h2 class="serif h-lg">Built, tested, and honest about it.</h2></div>
+  <dl class="facts reveal"><div><dt>Built</dt><dd>2025&ndash;26</dd></div><div><dt>Tested with</dt><dd>8&ndash;10 people</dd></div><div><dt>Live refresh</dt><dd>Every 2 s</dd></div><div><dt>Demo records</dt><dd>50 patients</dd></div></dl>
+<ul class="limits"><li class="reveal"><h3>Not a medical device</h3><p>A working student prototype. It explains a signal; it doesn&rsquo;t diagnose one.</p></li><li class="reveal" data-delay="80"><h3>Live only when it&rsquo;s on</h3><p>&ldquo;No active stream&rdquo; just means the ECG isn&rsquo;t running right now.</p></li><li class="reveal" data-delay="160"><h3>Synthetic patients</h3><p>The 50 records on the dashboard are generated demo data, not real people.</p></li></ul>
+</div></section>
+<section class="plate" id="next"><div class="wrap">
+  <div class="plate-head reveal"><span class="plate-no">Plate VI</span><h2 class="serif h-lg">What&rsquo;s next.</h2><p class="lede">The original MEDSETU idea went beyond monitoring: one place for a patient&rsquo;s reports, prescriptions and lab results, shareable with their doctor. That records vault is the next piece to build.</p></div>
+  
+</div></section>
+<section class="closing"><div class="wrap">
+  <h2 class="serif h-lg reveal">See your heart&rsquo;s signal, <em>live.</em></h2>
+  <div class="actions reveal"><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener" class="btn btn-red">Open the live dashboard <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="./faqs.html" class="link">Read the FAQs</a></div>
+</div></section>
 
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="./index.html" class="brand"><svg viewBox="0 0 64 36" fill="none" aria-hidden="true"><path pathLength="1" d="M2 20h14l5-9 7 22 8-31 6 18h20" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1"/></svg>MEDSETU</a>
-        <p>Real-time ECG monitoring and one home for medical records. A project from COEP Technological University.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer"><a href="./index.html">Home</a><a href="./health-monitoring.html">Health Monitoring</a><a href="./upload-documents.html">Upload Documents</a><a href="./access-documents.html">Access Documents</a><a href="./about.html">About</a><a href="./help.html">Help</a><a href="./faqs.html">FAQs</a><a href="./review.html">Review</a><a href="./login.html">Login</a><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">Live ECG dashboard</a></nav>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 MEDSETU. A student prototype, not a medical device.</span>
-      <span>Built by <a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener">Aryan Agarwal</a></span>
-    </div>
+    <span>MEDSETU &middot; an ECG project from COEP Technological University &middot; built by <a href="https://aryanagarwalsportfolio.vercel.app/" target="_blank" rel="noopener">Aryan Agarwal</a></span>
+    <nav aria-label="Footer"><a href="./index.html">Overview</a><a href="./health-monitoring.html">Live monitor</a><a href="./about.html">About</a><a href="./faqs.html">FAQs</a><a href="./help.html">Help</a><a href="https://medsetuecg.vercel.app/dashboard.html" target="_blank" rel="noopener">Live dashboard</a></nav>
   </div>
 </footer>
 <script src="./assets/site.js"></script>
